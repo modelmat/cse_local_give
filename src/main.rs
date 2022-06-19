@@ -85,7 +85,7 @@ fn main() {
     let path = Path::new(&path_str);
 
     let sftp = sess.sftp().unwrap();
-    sftp.mkdir(path, 0o640).unwrap();
+    sftp.mkdir(path, 0o770).unwrap();
     for file in config.files {
         let mut v = Vec::new();
         File::open(&local_files_folder.join(file))
